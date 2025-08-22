@@ -1,8 +1,8 @@
-import { validate } from "class-validator";
 import { CreateUtilisateurDTO } from "../dto/create-utilisateur.dto.js";
-import { plainToInstance } from "class-transformer";
 import { utilisateurService } from "../../core/services/utilisateur.service.js";
 import { Router } from "express";
+import { plainToInstance } from "class-transformer";
+import { validate } from "class-validator";
 
 const router = Router(); 
 
