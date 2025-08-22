@@ -1,8 +1,9 @@
-import { CreateUtilisateurDTO } from "../dto/create-utilisateur.dto.js";
+import { CreateUtilisateurDTO } from "../dto/request/create-utilisateur.request.dto.js";
 import { utilisateurService } from "../../core/services/utilisateur.service.js";
 import { Router } from "express";
 import { plainToInstance } from "class-transformer";
 import { validate } from "class-validator";
+import { UtilisateurResponseDTO } from "../dto/response/utilisateur.response.dto.js";
 
 const router = Router(); 
 
@@ -16,8 +17,7 @@ router.post("/", async (req, res) => {
     return res.status(400).json(errors);
   }
 
-  const utilisateur = await utilisateurService.createUtilisateur(dto);
-  console.log(utilisateur)
+  const utilisateur: UtilisateurResponseDTO = await utilisateurService.createUtilisateur(dto);
   res.status(201).json(utilisateur);
 });
 
