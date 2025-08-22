@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS utilisateurs (
 
 CREATE TABLE IF NOT EXISTS operations (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_utilisateur INT NOT NULL,
+    id_utilisateur CHAR(36) NOT NULL,
     montant DECIMAL(10, 2) NOT NULL,
     description VARCHAR(255),
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
